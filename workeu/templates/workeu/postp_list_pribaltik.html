@@ -1,0 +1,30 @@
+{% extends 'workeu/base.html' %}
+
+{% block content %} 
+<div class="content container">
+<div class="row">
+<div class="col-md-12">
+<span class="topik">Вакансии в Прибалтике</span>
+                {% for post in postsp %}
+				
+				<div class="{% cycle 'row1' 'row2' %}"> <!-- Чередование стилей. В данном случае цвета -->
+                    <div class="post postList">
+                        <div class="date">
+                            {{ post.published_date }}
+                        </div>
+                       <h1 class="glyphicon glyphicon-share"><a class="block" href="{% url 'postp_detail_pribaltik' pk=post.pk %}">{{ post.title }}</a></h1>
+					   
+                        
+                    </div>
+				 </div>	
+                {% endfor %}
+				
+				 
+</div>	
+</div>
+</div>
+		
+{% endblock content %}				
+				
+           
+		

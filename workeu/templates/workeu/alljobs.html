@@ -1,0 +1,79 @@
+{% extends 'workeu/base.html' %}
+
+
+
+
+{% block content %} 
+
+     <div class="row centered">
+					    <br>
+						    <div class="col-lg-12">
+							    <h1>Все доступные вакансии</h1>
+							</div>
+	 </div>	
+	 
+               <div class="container w paddingtop">
+				    <div class="row centered">
+					    <br><br>
+						    <div class="col-lg-4">
+							    
+								<span class="topikalljobs"><a class="g" href="{% url 'post_list' %}">Вакансии в Польше</a></span>
+								<p>
+								    {% for post in posts %}
+									    
+										 <div class="{% cycle 'row3' 'row4' %}"> <!-- Чередование стилей. В данном случае цвета -->
+                                             <div class="col-4 tilleLanding"><a href="{% url 'post_detail' pk=post.pk %}">&nbsp;{{ post.title }}</a></div>
+										   
+										 </div>
+                                           
+										  	 
+					                    
+                                    {% endfor %} 
+								</p>
+							</div>
+							<div class="col-lg-4">
+							    
+								<span class="topikalljobs"><a class="g" href="{% url 'postp_list_pribaltik' %}">Вакансии в Прибалтике</a></span>
+								<p>
+								
+								   {% for post in postsp %}
+									    
+										 <div class="{% cycle 'row3' 'row4' %}"> <!-- Чередование стилей. В данном случае цвета -->
+                                             <div class="col-4 tilleLanding"><a href="{% url 'postp_detail_pribaltik' pk=post.pk %}">&nbsp;{{ post.title }}</a></div>
+										   
+										 </div>
+                                           
+										  	 
+					                    
+                                    {% endfor %} 
+							  
+								</p>
+							</div>
+							<div class="col-lg-4">
+							    
+								<span class="topikalljobs"><a class="g" href="{% url 'postf_list_finland' %}">Вакансии в Финляндии</a></span>
+								<p>
+								    {% for post in postsf %}
+									    
+										 <div class="{% cycle 'row3' 'row4' %}"> <!-- Чередование стилей. В данном случае цвета -->
+                                             <div class="col-4 tilleLanding"><a href="{% url 'postf_detail_finland' pk=post.pk %}">&nbsp;{{ post.title }}</a></div>
+										   
+										 </div>
+                                           
+										  	 
+					                    
+                                    {% endfor %} 
+								</p>
+							</div>
+							
+					</div>
+					<br><br>
+				</div>
+				<br><hr><!-- Secondary, outline button -->
+					<div class="container">
+					    <div class="row centered">
+                    <div class="col-lg-12"><h3 class="glyphicon glyphicon-share"><a class="g" href="{% url 'landing' %}">На главную</a></h3><br></div>
+					    </div>
+					</div><br>
+				
+{% endblock content %}	

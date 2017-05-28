@@ -1,0 +1,38 @@
+ {% extends 'workeu/base.html' %}
+
+{% block content %}
+	<div class="content container">
+    <div class="row">
+	<div class="col-md-12">
+	    <span class="topik"><a class="g" href="{% url 'postf_list_finland' %}">Вакансии в Финляндии</a></span>
+	</div>
+    <div class="col-md-12">
+	
+        <div class="post">
+		
+            {% if post.published_date %}
+                <div class="date">
+                    {{ post.published_date }}
+                </div>
+				<div class="fotoFloat">
+				{% if post.photo %}
+                    <img class="img-responsive img-rounded img-thumbnail" alt="{{post.photo}}" src="{{post.photo.url}}" />
+
+                {% endif %}
+				</div>
+            {% endif %}
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+			<h3 class="glyphicon glyphicon-share"><a class="g" href="{% url 'landing' %}">На главную</a></h3><br>
+			<div class="col-lg-12"><button type="button" class="btn btn-success postresume btn-lg"><span class="buttall"><a href="{% url 'resume' %}">Заполнить анкету</a></span></button><br></div>
+			<hr class="style-two"></hr>
+        </div>
+		</div>
+		</div>
+        </div>		
+		
+{% endblock %}
+	
+    
+	
+	

@@ -1,0 +1,161 @@
+{% extends 'workeu/base.html' %}
+
+
+
+
+{% block content %} 
+                <div id="headerwrap">
+				    <div class="container">
+					    <div class="row centered">
+						     <div class="col-lg-8 col-lg-offset-2 fontLanding">
+							     <h1>
+								     РАБОТА В EU
+								 </h1>
+								 <h2>
+								    Добро пожаловать в "Working in Europe" 
+								 </h2>
+								 <h3>
+								     <b>"Working in Europe"</b> - это комманда молодых профессоналов в сфере трудоустройства за рубежом. 
+									 Мы сотрудничаем только с проверенными и надёжными работодателями стран Европейского союза.
+								 </h3>
+							 </div>
+						</div>					    
+					</div>
+				
+				</div>
+				<div class="container w">
+				    <div class="row centered">
+					    <br><br>
+						    <div class="col-lg-4">
+							    <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+								<h4>Вакансии в Польше</h4>
+								<p>
+								    {% for post in posts %}
+									    <div class="landingDate">
+										 <ul class="changed">
+                                             <li class="col-4 tilleLanding"><a href="{% url 'post_detail' pk=post.pk %}">&nbsp;{{ post.title }}</a></li>
+										   
+										   </ul>
+                                           
+										  	 
+					                      </div>
+                                    {% endfor %} 
+								</p>
+							</div>
+							<div class="col-lg-4">
+							    <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+								<h4>Вакансии в Прибалтике</h4>
+								<p>
+								
+								   {% for post in postsp %}
+									    <div class="landingDate">
+										 <ul class="changed">
+                                              <li class="col-4 tilleLanding"><a href="{% url 'postp_detail_pribaltik' pk=post.pk %}">&nbsp;{{ post.title }}</a></li>
+										   
+										   </ul>
+                                           
+										  	 
+					                      </div>
+                                    {% endfor %}  
+							  
+								</p>
+							</div>
+							<div class="col-lg-4">
+							    <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+								<h4>Вакансии в Финляндии</h4>
+								<p>
+								    {% for post in postsf %}
+									    <div class="landingDate">
+										 <ul class="changed">
+                                             <li class="col-4 tilleLanding"><a href="{% url 'postf_detail_finland' pk=post.pk %}">&nbsp;{{ post.title }}</a></li>
+										   
+										   </ul>
+                                           
+										  	 
+					                      </div>
+                                    {% endfor %}  
+								</p>
+							</div>
+							
+					</div>
+					<br><hr><!-- Secondary, outline button -->
+					<div class="container">
+					    <div class="row centered">
+                    <div class="col-lg-12"><button type="button" class="btn btn-primary btn-lg"><span class="buttall"><a href="{% url 'alljobs' %}">Перейти ко всем вакансиям</a></span></button><br></div>
+					    </div>
+					</div><br><br>	
+				</div>
+				<div id="dg">
+				    <div class="container">
+					    <div class="row centered">
+						    <h4>
+							    Последние новости
+							</h4>
+						    <br>
+							<div class="col-lg-4">
+							   <div class="tilt">
+							   <h3>Польша</h3>
+							       <a href="#"><img src="/static/img/warshawa.png" alt="Последние новости в Польше" class="img-responsive img-circle img-thumbnail"></a>
+							   </div> 
+							</div>
+							<div class="col-lg-4">
+							   <div class="tilt">
+							   <h3>Эстония</h3>
+							       <a href="#"><img src="/static/img/tallinn.png" alt="Последние новости в Эстонии" class="img-responsive img-circle img-thumbnail"></a>
+							   </div> 
+							</div>
+							<div class="col-lg-4">
+							   <div class="tilt">
+							   <h3>Финляндия</h3>
+							       <a href="#"><img src="/static/img/finland.png" alt="Последние новости в Финляндии" class="img-responsive img-circle img-thumbnail"></a>
+							   </div> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container wb">
+				    <div class="row centered">
+					    <br><br>
+						<div class="col-lg-8 col-lg-offset-2">
+						    <h4>Помощь в оформлении рабочих виз</h4>
+							    <p>
+								     <ul class="helpVisaLeft"><b>Оформление визы в 4 этапа:</b><br><br>
+									  <li><i class="fa fa-check-circle" aria-hidden="true">&nbsp;Позвонить менеджеру и выбрать самый удобный по срокам, цене и длительности вариант оформления визы.</i></li>
+                                      <li><i class="fa fa-check-circle" aria-hidden="true">&nbsp;Получить профессиональную консультацию по документам  визового эксперта.</i></li>
+                                      <li><i class="fa fa-check-circle" aria-hidden="true">&nbsp;Прислать курьером или принести документы в наш офис. Мы работаем со всеми регионами Украины.</i></li>
+                                      <li><i class="fa fa-check-circle" aria-hidden="true">&nbsp;Получить визу курьером или в нашем офисе. Мы можем выслать Вам документы курьером в любую точку Украины.</i></li>
+								     </ul>
+								</p>
+								<button type="button" class="btn btn-success"><span class="buttall"><a href="{% url 'HelpInVisa' %}">Получить более подробную информацию</a></span></button>
+								<p><br><br></p>
+						</div>
+						<div class="col-lg-2"></div>
+						    <div class="col-lg-10 col-lg-offset-1">
+							    <img src="/static/img/polsha-ukraina.png" alt="" class="img-responsive">
+							</div>
+					</div>
+				</div>
+				<div id="r">
+				    <div class="container">
+					    <div class="row centered">
+						    <div class="col-lg-8 col-lg-offset-2">
+							    <h4>С чего начать?</h4>
+								<p>
+								    Если Вас заинтересовала одна из доступных вакансий, для рассмотрения Вашей кандидатуры и подбора 
+									соответствующего вашим требованиям места работы, необходимо:<br>
+									<div class="col-lg-12"><button type="button" class="btn btn-success postresume btn-lg"><span class="buttall"><a href="{% url 'resume' %}">Заполнить анкету</a></span></button><br></div><br>
+								</p>
+                                <p>  								
+									или<br>
+									<span class="linkResume"><a href="/static/doc/resume.doc" download><b><em><i class="fa fa-download" aria-hidden="true">&nbsp;Скачать резюме</i></em></b>&nbsp;</a>,
+									заполнить её и отправить нам на почту:&nbsp;
+									<a href="mailto:tzvanguardia@gmail.com"><em><i class="fa fa-envelope" aria-hidden="true">&nbsp;tzvanguardia@gmail.com</i></em></a></span><br>
+									<em>В первую очередь рассматриваются кандидаты, заполнившие анкету или приславшие резюме!</em>
+								</p>
+							</div>
+						</div>
+					
+					</div>
+				
+				</div>
+{% endblock content %}	
