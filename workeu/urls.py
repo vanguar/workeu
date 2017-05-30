@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
+    url(r'^techwork/$', views.techwork, name='techwork'), # Переадресация на страницу технических работ
     url(r'^$', views.landing, name='landing'), # Переадресация для вывода Лендинга
     url(r'^post_list/$', views.post_list, name='post_list'), # ... для вывода страницы постов по Польше
 	url(r'^post/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'), # ... для более детального вывода поста по Польше

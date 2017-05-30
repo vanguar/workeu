@@ -25,7 +25,10 @@ def post_list(request): # Страница вывода постов по Пол
 	
 def post_detail(request, pk): # Страница вывода поста по Польше более детально
         post = get_object_or_404(Post, pk=pk)
-        return render(request, 'workeu/post_detail.html', {'post': post})	
+        return render(request, 'workeu/post_detail.html', {'post': post})
+
+def techwork(request): # Страница вывода сообщения о выполнении технических работ
+            return render(request, 'workeu/techwork.html')		
 
 #Контактная форма для отправки сообщения		
 class ContactForm(forms.Form):

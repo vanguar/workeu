@@ -41,7 +41,8 @@
 					</li>
 					{% url 'HelpInVisa' as url %}
                     <li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Помощь с визами</a></li>
-					<li><a href="#">Новости</a></li>
+					{% url 'techwork' as url %}
+					<li {% if request.path == url %}class = "active"{% endif %}><a href="{{url}}">Новости</a></li>
 				</ul>
 			
 			</div>
