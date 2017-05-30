@@ -5,18 +5,30 @@
 <div class="row">
 <div class="col-md-12">
 <span class="topik">Вакансии в Финляндии</span>
-                {% for post in postsf %}
-				 <div class="{% cycle 'row1' 'row2' %}"> <!-- Чередование стилей. В данном случае цвета -->
-                    <div class="post postList">
-                        <div class="date">
-                            {{ post.published_date }}
-                        </div>
-                       <h1 class="glyphicon glyphicon-share"><a class="block" href="{% url 'postf_detail_finland' pk=post.pk %}">{{ post.title }}</a></h1>
-					   
-                        
-                     </div>
-				 </div>	
-                {% endfor %}
+                <table class="table table-striped  post postList">
+<tr>
+ <th>Вакансия</th>
+ <th>Дата публикации</th>
+</tr>
+<tbody>
+  <div class="post postList">
+ {% for post in postsf %} 
+<tr>
+     
+ <td>
+     <h1 class="glyphicon glyphicon-share"><a class="block" href="{% url 'postf_detail_finland' pk=post.pk %}">{{ post.title }}</a></h1>
+ </td>
+<td>
+     <div class="date">
+		{{ post.published_date }}
+	 </div>
+</td>
+
+</tr>
+ {% endfor %}
+</div>
+</tbody>
+</table>
 				
 				 
 </div>	
